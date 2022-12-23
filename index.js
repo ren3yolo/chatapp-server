@@ -11,6 +11,8 @@ const url =
     ? process.env.DEV_URL
     : process.env.PROD_URL;
 
+console.log(url);
+
 const io = new Server(httpServer, {
   cors: {
     origin: url,
