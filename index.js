@@ -1,6 +1,7 @@
 const express = require("express");
 const { createServer } = require("http");
 const { Server } = require("socket.io");
+const port = process.env.PORT | 8000;
 
 const app = express();
 const httpServer = createServer(app);
@@ -50,6 +51,6 @@ io.use((socket, next) => {
   next();
 });
 
-httpServer.listen(8000, () => {
+httpServer.listen(port, () => {
   console.log(`Server running on port 8000`);
 });
